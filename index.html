@@ -1,42 +1,1564 @@
-Kamu adalah AI pembuat aplikasi web yang ahli dalam HTML, CSS, dan JavaScript.
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastSlide - Pembuatan PPT Kilat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Overlock:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-Buatkan sebuah website statis berbasis HTML, CSS, dan JavaScript berdasarkan informasi berikut:
+        body {
+            font-family: 'Overlock', cursive;
+            background: linear-gradient(135deg, #19183B 0%, #708993 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-### Nama Aplikasi
-FastSlide
+        /* Loading Animation */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #19183B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
 
-### Tujuan / Fungsi Utama
-membantu mahasiswamenyiapkan presentasi PowerPoint dengan cepat, rapi, dan berkualitas. Dari tugas kuliah sampai pitch deck bisnis, semuanya dibuat efisien tanpa perlu repot desain manual.
+        .loader-wrapper.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
 
-### Target Pengguna
-mahasiswa
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 5px solid #708993;
+            border-top: 5px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
 
-### Fitur-Fitur yang Diinginkan
-Saya menawarkan jasa Pembuatan PPT Kilat dengan pengerjaan cepat 1–3 jam. Presentasi dibuat dari nol dengan desain modern, rapi, dan menggunakan palet warna premium. Setiap slide dilengkapi layout komunikatif, ikon pada ini tambahkan foto dari file fg6.JPG  ilustrasi, dan visualisasi data agar mudah dipahami.
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
-Saya juga menyediakan Template PPT estetik & profesional berisi 20–40 layout lengkap (cover, isi, grafik, tabel, foto, hingga penutup). Template dapat digunakan berulang kali dan cocok untuk tugas kuliah, bisnis, laporan, company profile, dan pitching.
+        /* Header */
+        header {
+            background: rgba(25, 24, 59, 0.95);
+            padding: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s ease;
+        }
 
-Untuk PPT yang sudah ada, saya menawarkan layanan Perapian PPT, yaitu merapikan struktur slide, menyeragamkan warna & font, memperbaiki tata letak elemen, meningkatkan kualitas gambar/ikon, menyederhanakan teks berlebih, serta membuat tampilan keseluruhan lebih bersih dan profesional.
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
 
-Hasil akhir dapat diekspor dalam format PPTX (editable) dan PDF (siap presentasi), termasuk opsi file ringan untuk dikirim via WhatsApp atau versi HD untuk layar besar.
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-Sertakan juga tambahan seperti konsultasi konsep gratis, penyesuaian gaya sesuai brand, dan revisi ringan. Tambhkan beberapa gambar dari fg.JPG, fg1.JPG, fg2.JPG, fg3.JPG yang ada untuk melengkapinya. Dan juga tambahkan pada footernya Laela Krisna Ayu Bisnis Digital Semester 5
+        .logo i {
+            color: #708993;
+        }
 
-### Desain dan Gaya Tampilan
-Warna 19183B dan 708993 yang lainnya terserah, font overlock, dan gaya minimalis moderen, navigasi dibawah
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            color: #fff;
+            animation: fadeIn 1s ease;
+        }
 
-### Interaksi dan Perilaku
----
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-Proses dimulai dengan kamu **mengirimkan materi atau mengunggah file** yang ingin diubah menjadi slide presentasi. Setelah materi diterima, kamu akan **memilih template atau gaya desain**—mulai dari estetik, minimalis, profesional, sampai gaya brand tertentu. Jika kamu bingung memilih, desainer akan memberikan beberapa rekomendasi template yang paling cocok dengan jenis materi dan tujuan presentasimu. Setelah template disetujui, desainer langsung **masuk ke tahap pengerjaan**, yaitu menyusun ulang konten agar lebih jelas, menyesuaikan layout setiap slide, memilih warna yang serasi, menambahkan ikon, ilustrasi, dan visualisasi data, serta memastikan alurnya enak diikuti. Proses ini berlangsung cepat, sekitar **1–3 jam** tergantung jumlah slide. Jika ada bagian yang perlu dikonfirmasi, desainer akan menghubungi kamu agar hasil lebih sesuai. Setelah selesai, presentasi akan **dikirim dalam format PPTX yang bisa kamu edit dan PDF yang siap langsung dipresentasikan**. Kamu juga dapat meminta versi file ringan untuk dikirim lewat WhatsApp atau versi HD untuk tampilan layar besar. Jika masih ada revisi kecil, desainer tetap siap membantu agar hasil akhir benar-benar sesuai kebutuhanmu.
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
 
-### Teknologi dan Struktur
-HTML,CSS, Javacript, localstorage
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
 
-### Tambahan
-anaimasi js, bootstrap 5, animasi loding
+        .cta-button {
+            background: #708993;
+            color: #fff;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 700;
+        }
 
-### Instruksi Akhir
-Buat seluruh aplikasi dalam satu file HTML agar mudah dijalankan.
-Gunakan Bootstrap 5 untuk tampilan modern.
-Pastikan tampilannya responsive di perangkat mobile.
+        .cta-button:hover {
+            background: #fff;
+            color: #19183B;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s;
+            margin-bottom: 30px;
+            height: 100%;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.8s ease;
+            animation-fill-mode: both;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.2s; }
+        .feature-card:nth-child(2) { animation-delay: 0.4s; }
+        .feature-card:nth-child(3) { animation-delay: 0.6s; }
+        .feature-card:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .feature-icon {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #708993;
+        }
+
+        .feature-icon-img {
+            width: 100%;
+            height: 180px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .feature-icon-img:hover img {
+            transform: scale(1.1);
+        }
+
+        .feature-icon-img i {
+            font-size: 4rem;
+            color: #708993;
+        }
+
+        .feature-card h3 {
+            color: #19183B;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .btn-detail {
+            background: #19183B;
+            color: #fff;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            margin-top: 15px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-detail:hover {
+            background: #708993;
+            transform: scale(1.05);
+        }
+
+        /* Steps Section */
+        .steps {
+            padding: 80px 0;
+            color: #fff;
+        }
+
+        .steps h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 60px;
+            color: #fff;
+        }
+
+        .step-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s;
+            animation: slideInLeft 0.8s ease;
+            animation-fill-mode: both;
+        }
+
+        .step-item:nth-child(1) { animation-delay: 0.2s; }
+        .step-item:nth-child(2) { animation-delay: 0.4s; }
+        .step-item:nth-child(3) { animation-delay: 0.6s; }
+        .step-item:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .step-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(10px);
+        }
+
+        .step-number {
+            background: #708993;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .step-content p {
+            margin: 0;
+            color: #e0e0e0;
+        }
+
+        .btn-step {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 10px 25px;
+            border-radius: 25px;
+            margin-top: 15px;
+            transition: all 0.3s;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-step:hover {
+            background: #fff;
+            color: #19183B;
+            transform: translateX(5px);
+        }
+
+        .btn-step i {
+            margin-right: 8px;
+        }
+
+        /* Modal Styles */
+        .modal-custom {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-custom.show {
+            display: flex;
+        }
+
+        .modal-content-custom {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideInDown 0.4s ease;
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #19183B;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            color: #708993;
+            transform: rotate(90deg);
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .template-item {
+            background: linear-gradient(135deg, #19183B 0%, #708993 100%);
+            color: #fff;
+            padding: 40px 20px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .template-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .template-item.selected {
+            border: 3px solid #fff;
+            transform: scale(1.05);
+        }
+
+        .upload-area {
+            border: 3px dashed #708993;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #f9f9f9;
+        }
+
+        .upload-area:hover {
+            background: #f0f0f0;
+            border-color: #19183B;
+        }
+
+        .upload-area i {
+            font-size: 4rem;
+            color: #708993;
+            margin-bottom: 20px;
+        }
+
+        .file-list {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .file-item {
+            background: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-remove {
+            background: #ff4444;
+            color: #fff;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-remove:hover {
+            background: #cc0000;
+        }
+
+        /* Saved Page Styles */
+        .saved-page {
+            background: linear-gradient(135deg, #19183B 0%, #708993 100%);
+        }
+
+        .saved-section {
+            margin-bottom: 30px;
+        }
+
+        .saved-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .saved-card h3 {
+            color: #19183B;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .saved-card h3 i {
+            color: #708993;
+            margin-right: 10px;
+        }
+
+        .image-upload-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .image-upload-item label {
+            cursor: pointer;
+            display: block;
+        }
+
+        .upload-preview {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border: 3px dashed #708993;
+            border-radius: 15px;
+            padding: 30px 15px;
+            text-align: center;
+            transition: all 0.3s;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .upload-preview:hover {
+            background: linear-gradient(135deg, #e0e0e0 0%, #d0d0d0 100%);
+            border-color: #19183B;
+            transform: translateY(-5px);
+        }
+
+        .upload-preview i {
+            font-size: 3rem;
+            color: #708993;
+            margin-bottom: 10px;
+        }
+
+        .upload-preview p {
+            color: #555;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .upload-preview.has-image {
+            border-style: solid;
+            border-color: #4CAF50;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .upload-preview.has-image i {
+            display: none;
+        }
+
+        .upload-preview.has-image p {
+            background: rgba(255,255,255,0.9);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: auto;
+        }
+
+        .history-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #708993;
+        }
+
+        .history-item h5 {
+            color: #19183B;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .history-item p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .main-content {
+            display: block;
+        }
+
+        .main-content.hidden {
+            display: none;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(25, 24, 59, 0.98);
+            padding: 15px 0;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            animation: slideUp 0.8s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .nav-items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .nav-item {
+            color: #708993;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            padding: 5px 15px;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .nav-item i {
+            font-size: 1.5rem;
+        }
+
+        /* Footer Info */
+        .footer-info {
+            background: rgba(25, 24, 59, 0.8);
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 70px;
+        }
+
+        .footer-info p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .steps h2 {
+                font-size: 1.8rem;
+            }
+
+            .step-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-item span {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-bolt"></i>
+                FastSlide
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Presentasi PowerPoint Kilat & Berkualitas</h1>
+            <p>Dari tugas kuliah sampai pitch deck bisnis, semuanya dibuat efisien tanpa perlu repot desain manual</p>
+            <a href="#features" class="cta-button">Mulai Sekarang</a>
+            <div class="hero-image-container" style="margin-top: 40px;">
+                <img id="heroImage" src="gambar/fg6.JPG" alt="FastSlide Hero" class="hero-image" style="max-width: 500px; width: 100%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features main-content" id="features">
+        <div class="container">
+            <h2 class="text-center mb-5 text-white">Layanan Kami</h2>
+            <div class="row">
+                <div class="gambar/f">
+                    <div class="feature-card" data-service="ppt-kilat">
+                        <div class="feature-icon-img">
+                            <img id="serviceFg" src="gambar/fg.png" alt="PPT Kilat" onerror="this.parentElement.innerHTML='<i class=\'fas fa-rocket\'></i>'">
+                        </div>
+                        <h3>Pembuatan PPT Kilat</h3>
+                        <p>Presentasi dibuat dari nol dengan desain modern, rapi, dan palet warna premium. Layout komunikatif dengan ikon & ilustrasi.</p>
+                        <button class="btn btn-detail" onclick="showServiceDetail('ppt-kilat')">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card" data-service="template">
+                        <div class="feature-icon-img">
+                            <img id="serviceFg2" src="gambar/fg2.png" alt="Template Estetik" onerror="this.parentElement.innerHTML='<i class=\'fas fa-paint-brush\'></i>'">
+                        </div>
+                        <h3>Template Estetik & Profesional</h3>
+                        <p>20-40 layout lengkap (cover, isi, grafik, tabel, foto, penutup). Dapat digunakan berulang kali.</p>
+                        <button class="btn btn-detail" onclick="showServiceDetail('template')">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card" data-service="perapian">
+                        <div class="feature-icon-img">
+                            <img id="serviceFg1" src="gambar/fg1.png" alt="Perapian PPT" onerror="this.parentElement.innerHTML='<i class=\'fas fa-magic\'></i>'">
+                        </div>
+                        <h3>Perapian PPT</h3>
+                        <p>Merapikan struktur slide, menyeragamkan warna & font, memperbaiki tata letak, dan meningkatkan kualitas visual.</p>
+                        <button class="btn btn-detail" onclick="showServiceDetail('perapian')">Lihat Detail</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card" data-service="export">
+                        <div class="feature-icon-img">
+                            <img id="serviceFg3" src="gambar/fg3.JPG" alt="Export PPT" onerror="this.parentElement.innerHTML='<i class=\'fas fa-file-export\'></i>'">
+                        </div>
+                        <h3>Export PPT/PDF</h3>
+                        <p>Format PPTX (editable) dan PDF (siap presentasi). Opsi file ringan atau HD untuk layar besar.</p>
+                        <button class="btn btn-detail" onclick="showServiceDetail('export')">Lihat Detail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps main-content" id="steps">
+        <div class="container">
+            <h2>Cara Kerja FastSlide</h2>
+            <div class="step-item" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Kirim Materi / Upload File</h3>
+                    <p>Upload materi yang ingin diubah menjadi slide presentasi. Bisa file Word, PDF, atau catatan.</p>
+                    <button class="btn btn-step" onclick="openUploadModal()">
+                        <i class="fas fa-upload"></i> Upload Materi
+                    </button>
+                </div>
+            </div>
+            <div class="step-item" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Pilih Template / Gaya Desain</h3>
+                    <p>Pilih dari template estetik, minimalis, profesional, atau gaya brand tertentu. Dapatkan rekomendasi jika bingung.</p>
+                    <button class="btn btn-step" onclick="openTemplateModal()">
+                        <i class="fas fa-palette"></i> Pilih Template
+                    </button>
+                </div>
+            </div>
+            <div class="step-item" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Desainer Menggarap PPT</h3>
+                    <p>Tim menyusun ulang konten, menyesuaikan layout, memilih warna, menambahkan ikon & visualisasi data. Proses 1-3 jam!</p>
+                    <div class="progress mt-3" style="height: 25px; display: none;" id="progressBar">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="step-item" data-step="4">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Selesai & Dikirim</h3>
+                    <p>File PPTX (editable) & PDF (siap presentasi) dikirim. Pilih file ringan untuk WhatsApp atau HD untuk layar besar.</p>
+                    <button class="btn btn-step" onclick="simulateDownload()">
+                        <i class="fas fa-download"></i> Download Hasil
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Info -->
+    <div class="footer-info main-content">
+        <div class="container">
+            <p><strong>Laela Krisna Ayu</strong></p>
+            <p>Bisnis Digital - Semester 5</p>
+        </div>
+    </div>
+
+    <!-- Modal Upload -->
+    <div class="modal-custom" id="uploadModal">
+        <div class="modal-content-custom">
+            <span class="modal-close" onclick="closeModal('uploadModal')">&times;</span>
+            <h2 style="color: #19183B; margin-bottom: 20px;">Upload Materi Presentasi</h2>
+            <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h4>Klik atau Drop File Di Sini</h4>
+                <p>Mendukung: DOC, DOCX, PDF, TXT, PPT, PPTX</p>
+            </div>
+            <input type="file" id="fileInput" style="display: none;" multiple onchange="handleFileUpload(event)">
+            <div class="file-list" id="fileList"></div>
+            <button class="btn btn-detail w-100 mt-3" onclick="submitUpload()">
+                <i class="fas fa-check"></i> Lanjutkan
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Template -->
+    <div class="modal-custom" id="templateModal">
+        <div class="modal-content-custom">
+            <span class="modal-close" onclick="closeModal('templateModal')">&times;</span>
+            <h2 style="color: #19183B; margin-bottom: 20px;">Pilih Gaya Desain</h2>
+            <div class="template-grid">
+                <div class="template-item" onclick="selectTemplate(this, 'Minimalis')">
+                    <i class="fas fa-th-large" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                    <h5>Minimalis</h5>
+                </div>
+                <div class="template-item" onclick="selectTemplate(this, 'Profesional')">
+                    <i class="fas fa-briefcase" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                    <h5>Profesional</h5>
+                </div>
+                <div class="template-item" onclick="selectTemplate(this, 'Kreatif')">
+                    <i class="fas fa-lightbulb" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                    <h5>Kreatif</h5>
+                </div>
+                <div class="template-item" onclick="selectTemplate(this, 'Modern')">
+                    <i class="fas fa-rocket" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                    <h5>Modern</h5>
+                </div>
+                <div class="template-item" onclick="selectTemplate(this, 'Corporate')">
+                    <i class="fas fa-building" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                    <h5>Corporate</h5>
+                </div>
+                <div class="template-item" onclick="selectTemplate(this, 'Akademik')">
+                    <i class="fas fa-graduation-cap" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                    <h5>Akademik</h5>
+                </div>
+            </div>
+            <button class="btn btn-detail w-100 mt-4" onclick="submitTemplate()">
+                <i class="fas fa-check"></i> Konfirmasi Pilihan
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Service Detail -->
+    <div class="modal-custom" id="serviceModal">
+        <div class="modal-content-custom">
+            <span class="modal-close" onclick="closeModal('serviceModal')">&times;</span>
+            <div id="serviceDetail"></div>
+        </div>
+    </div>
+
+    <!-- Saved Page (Hidden by default) -->
+    <div class="saved-page" id="savedPage" style="display: none; padding: 100px 0 120px; min-height: 100vh;">
+        <div class="container">
+            <h2 class="text-white text-center mb-5">📌 Halaman Simpan</h2>
+            
+            <!-- Upload Image Section -->
+            <div class="saved-section">
+                <div class="saved-card">
+                    <h3><i class="fas fa-images"></i> Upload Gambar Layanan</h3>
+                    <p>Upload gambar untuk masing-masing layanan FastSlide</p>
+                    
+                    <div class="image-upload-grid">
+                        <div class="image-upload-item">
+                            <label>
+                                <div class="upload-preview" id="preview-fg">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>PPT Kilat<br>(fg.JPG)</p>
+                                </div>
+                                <input type="file" accept="image/*" onchange="uploadServiceImage(event, 'fg')" style="display: none;">
+                            </label>
+                        </div>
+                        
+                        <div class="image-upload-item">
+                            <label>
+                                <div class="upload-preview" id="preview-fg2">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Template<br>(fg2.JPG)</p>
+                                </div>
+                                <input type="file" accept="image/*" onchange="uploadServiceImage(event, 'fg2')" style="display: none;">
+                            </label>
+                        </div>
+                        
+                        <div class="image-upload-item">
+                            <label>
+                                <div class="upload-preview" id="preview-fg1">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Perapian<br>(fg1.JPG)</p>
+                                </div>
+                                <input type="file" accept="image/*" onchange="uploadServiceImage(event, 'fg1')" style="display: none;">
+                            </label>
+                        </div>
+                        
+                        <div class="image-upload-item">
+                            <label>
+                                <div class="upload-preview" id="preview-fg3">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Export<br>(fg3.JPG)</p>
+                                </div>
+                                <input type="file" accept="image/*" onchange="uploadServiceImage(event, 'fg3')" style="display: none;">
+                            </label>
+                        </div>
+                        
+                        <div class="image-upload-item">
+                            <label>
+                                <div class="upload-preview" id="preview-fg6">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Hero Image<br>(fg6.JPG)</p>
+                                </div>
+                                <input type="file" accept="image/*" onchange="uploadServiceImage(event, 'fg6')" style="display: none;">
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-detail w-100 mt-3" onclick="saveAllImages()">
+                        <i class="fas fa-save"></i> Simpan Semua Gambar
+                    </button>
+                </div>
+            </div>
+            
+            <!-- History Section -->
+            <div class="saved-section mt-4">
+                <div class="saved-card">
+                    <h3><i class="fas fa-history"></i> Riwayat Aktivitas</h3>
+                    <div id="historyList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-items">
+            <a href="#home" class="nav-item active" onclick="switchPage('home', this)">
+                <i class="fas fa-home"></i>
+                <span>Beranda</span>
+            </a>
+            <a href="#saved" class="nav-item" onclick="switchPage('saved', this)">
+                <i class="fas fa-bookmark"></i>
+                <span>Simpan</span>
+            </a>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Loading Animation
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active Navigation
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                navItems.forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Switch Page Function
+        function switchPage(page, element) {
+            const mainContent = document.querySelectorAll('.main-content');
+            const savedPage = document.getElementById('savedPage');
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            navItems.forEach(nav => nav.classList.remove('active'));
+            element.classList.add('active');
+            
+            if (page === 'saved') {
+                mainContent.forEach(content => content.classList.add('hidden'));
+                savedPage.style.display = 'block';
+                loadHistory();
+                loadSavedImages();
+            } else {
+                mainContent.forEach(content => content.classList.remove('hidden'));
+                savedPage.style.display = 'none';
+            }
+        }
+
+        // Upload Service Image
+        let uploadedImages = {};
+
+        function uploadServiceImage(event, imageId) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageData = e.target.result;
+                uploadedImages[imageId] = imageData;
+                
+                const preview = document.getElementById(`preview-${imageId}`);
+                preview.style.backgroundImage = `url(${imageData})`;
+                preview.classList.add('has-image');
+                
+                showNotification(`✓ Gambar ${imageId}.JPG berhasil diupload!`, 'success');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Save All Images
+        function saveAllImages() {
+            if (Object.keys(uploadedImages).length === 0) {
+                showNotification('Tidak ada gambar untuk disimpan!', 'error');
+                return;
+            }
+            
+            // Save to localStorage
+            Object.keys(uploadedImages).forEach(key => {
+                localStorage.setItem(`fastslide_image_${key}`, uploadedImages[key]);
+            });
+            
+            // Update main page images
+            if (uploadedImages['fg']) {
+                const img = document.getElementById('serviceFg');
+                if (img) img.src = uploadedImages['fg'];
+            }
+            if (uploadedImages['fg2']) {
+                const img = document.getElementById('serviceFg2');
+                if (img) img.src = uploadedImages['fg2'];
+            }
+            if (uploadedImages['fg1']) {
+                const img = document.getElementById('serviceFg1');
+                if (img) img.src = uploadedImages['fg1'];
+            }
+            if (uploadedImages['fg3']) {
+                const img = document.getElementById('serviceFg3');
+                if (img) img.src = uploadedImages['fg3'];
+            }
+            if (uploadedImages['fg6']) {
+                const img = document.getElementById('heroImage');
+                if (img) img.src = uploadedImages['fg6'];
+            }
+            
+            // Save history
+            const history = JSON.parse(localStorage.getItem('fastslide_history') || '[]');
+            history.unshift({
+                type: 'image_upload',
+                count: Object.keys(uploadedImages).length,
+                timestamp: new Date().toISOString()
+            });
+            localStorage.setItem('fastslide_history', JSON.stringify(history.slice(0, 20)));
+            
+            showNotification(`✓ ${Object.keys(uploadedImages).length} gambar berhasil disimpan!`, 'success');
+            uploadedImages = {};
+        }
+
+        // Load Saved Images
+        function loadSavedImages() {
+            const imageIds = ['fg', 'fg2', 'fg1', 'fg3', 'fg6'];
+            imageIds.forEach(id => {
+                const savedImage = localStorage.getItem(`fastslide_image_${id}`);
+                if (savedImage) {
+                    const preview = document.getElementById(`preview-${id}`);
+                    if (preview) {
+                        preview.style.backgroundImage = `url(${savedImage})`;
+                        preview.classList.add('has-image');
+                    }
+                }
+            });
+        }
+
+        // Load History
+        function loadHistory() {
+            const historyList = document.getElementById('historyList');
+            const history = JSON.parse(localStorage.getItem('fastslide_history') || '[]');
+            
+            if (history.length === 0) {
+                historyList.innerHTML = '<p style="color: #666; text-align: center; padding: 30px;">Belum ada aktivitas</p>';
+                return;
+            }
+            
+            historyList.innerHTML = history.map(item => {
+                const date = new Date(item.timestamp);
+                const dateStr = date.toLocaleDateString('id-ID', { 
+                    day: '2-digit', 
+                    month: 'short', 
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                let title = '';
+                let icon = '';
+                
+                if (item.type === 'image_upload') {
+                    title = `Upload ${item.count} Gambar`;
+                    icon = '<i class="fas fa-images" style="color: #708993;"></i>';
+                } else if (item.type === 'file_upload') {
+                    title = `Upload ${item.count} File Materi`;
+                    icon = '<i class="fas fa-file-upload" style="color: #4CAF50;"></i>';
+                } else if (item.type === 'template_select') {
+                    title = `Pilih Template "${item.template}"`;
+                    icon = '<i class="fas fa-palette" style="color: #ff9800;"></i>';
+                } else if (item.type === 'download') {
+                    title = `Download Presentasi`;
+                    icon = '<i class="fas fa-download" style="color: #2196F3;"></i>';
+                }
+                
+                return `
+                    <div class="history-item">
+                        <h5>${icon} ${title}</h5>
+                        <p><i class="fas fa-clock"></i> ${dateStr}</p>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Update history logging
+        function submitUpload() {
+            if (uploadedFiles.length === 0) {
+                showNotification('Pilih file terlebih dahulu!', 'error');
+                return;
+            }
+            
+            const uploadData = {
+                files: uploadedFiles.map(f => ({ name: f.name, size: f.size })),
+                timestamp: new Date().toISOString()
+            };
+            localStorage.setItem('fastslide_upload', JSON.stringify(uploadData));
+            
+            // Save to history
+            const history = JSON.parse(localStorage.getItem('fastslide_history') || '[]');
+            history.unshift({
+                type: 'file_upload',
+                count: uploadedFiles.length,
+                timestamp: new Date().toISOString()
+            });
+            localStorage.setItem('fastslide_history', JSON.stringify(history.slice(0, 20)));
+            
+            showNotification(`✓ ${uploadedFiles.length} file berhasil diupload!`, 'success');
+            closeModal('uploadModal');
+            openTemplateModal();
+        }
+
+        function submitTemplate() {
+            if (!selectedTemplate) {
+                showNotification('Pilih template terlebih dahulu!', 'error');
+                return;
+            }
+            
+            localStorage.setItem('fastslide_template', selectedTemplate);
+            
+            // Save to history
+            const history = JSON.parse(localStorage.getItem('fastslide_history') || '[]');
+            history.unshift({
+                type: 'template_select',
+                template: selectedTemplate,
+                timestamp: new Date().toISOString()
+            });
+            localStorage.setItem('fastslide_history', JSON.stringify(history.slice(0, 20)));
+            
+            showNotification(`✓ Template "${selectedTemplate}" berhasil dipilih!`, 'success');
+            closeModal('templateModal');
+            simulateProgress();
+        }
+
+        function simulateDownload() {
+            showNotification('📥 Memulai download...', 'success');
+            
+            setTimeout(() => {
+                showNotification('✓ File PPTX & PDF siap didownload!', 'success');
+                
+                const history = JSON.parse(localStorage.getItem('fastslide_history') || '[]');
+                history.unshift({
+                    type: 'download',
+                    template: selectedTemplate || 'Default',
+                    files: uploadedFiles.length,
+                    timestamp: new Date().toISOString()
+                });
+                localStorage.setItem('fastslide_history', JSON.stringify(history.slice(0, 20)));
+            }, 2000);
+        }
+
+        // Load saved images on page load
+        window.addEventListener('load', function() {
+            const imageIds = ['fg', 'fg2', 'fg1', 'fg3', 'fg6'];
+            imageIds.forEach(id => {
+                const savedImage = localStorage.getItem(`fastslide_image_${id}`);
+                if (savedImage) {
+                    if (id === 'fg6') {
+                        const heroImg = document.getElementById('heroImage');
+                        if (heroImg) heroImg.src = savedImage;
+                    } else {
+                        const serviceImg = document.getElementById(`service${id.charAt(0).toUpperCase() + id.slice(1)}`);
+                        if (serviceImg) serviceImg.src = savedImage;
+                    }
+                }
+            });
+        });
+
+        // LocalStorage Function
+        function saveToLocalStorage() {
+            const data = {
+                timestamp: new Date().toISOString(),
+                page: 'FastSlide',
+                user: 'Laela Krisna Ayu'
+            };
+            
+            try {
+                localStorage.setItem('fastslide_visit', JSON.stringify(data));
+                showNotification('✓ Halaman berhasil disimpan!', 'success');
+            } catch (error) {
+                console.error('Error saving to localStorage:', error);
+                showNotification('✗ Gagal menyimpan data', 'error');
+            }
+        }
+
+        // Notification Function
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#4CAF50' : '#f44336'};
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                z-index: 10000;
+                animation: slideInRight 0.5s ease;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.5s ease';
+                setTimeout(() => notification.remove(), 500);
+            }, 3000);
+        }
+
+        // Modal Functions
+        function openUploadModal() {
+            document.getElementById('uploadModal').classList.add('show');
+        }
+
+        function openTemplateModal() {
+            document.getElementById('templateModal').classList.add('show');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+        }
+
+        // File Upload Handler
+        let uploadedFiles = [];
+
+        function handleFileUpload(event) {
+            const files = Array.from(event.target.files);
+            uploadedFiles = [...uploadedFiles, ...files];
+            displayFiles();
+        }
+
+        function displayFiles() {
+            const fileList = document.getElementById('fileList');
+            fileList.innerHTML = '';
+            
+            uploadedFiles.forEach((file, index) => {
+                const fileItem = document.createElement('div');
+                fileItem.className = 'file-item';
+                fileItem.innerHTML = `
+                    <span><i class="fas fa-file"></i> ${file.name} (${(file.size / 1024).toFixed(2)} KB)</span>
+                    <button class="btn-remove" onclick="removeFile(${index})">Hapus</button>
+                `;
+                fileList.appendChild(fileItem);
+            });
+        }
+
+        function removeFile(index) {
+            uploadedFiles.splice(index, 1);
+            displayFiles();
+        }
+
+        function submitUpload() {
+            if (uploadedFiles.length === 0) {
+                showNotification('Pilih file terlebih dahulu!', 'error');
+                return;
+            }
+            
+            // Save to localStorage
+            const uploadData = {
+                files: uploadedFiles.map(f => ({ name: f.name, size: f.size })),
+                timestamp: new Date().toISOString()
+            };
+            localStorage.setItem('fastslide_upload', JSON.stringify(uploadData));
+            
+            showNotification(`✓ ${uploadedFiles.length} file berhasil diupload!`, 'success');
+            closeModal('uploadModal');
+            openTemplateModal();
+        }
+
+        // Template Selection
+        let selectedTemplate = '';
+
+        function selectTemplate(element, templateName) {
+            document.querySelectorAll('.template-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            selectedTemplate = templateName;
+        }
+
+        function submitTemplate() {
+            if (!selectedTemplate) {
+                showNotification('Pilih template terlebih dahulu!', 'error');
+                return;
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('fastslide_template', selectedTemplate);
+            
+            showNotification(`✓ Template "${selectedTemplate}" berhasil dipilih!`, 'success');
+            closeModal('templateModal');
+            
+            // Simulate progress
+            simulateProgress();
+        }
+
+        // Progress Simulation
+        function simulateProgress() {
+            const progressBar = document.getElementById('progressBar');
+            const progressFill = progressBar.querySelector('.progress-bar');
+            progressBar.style.display = 'block';
+            
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 10;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    progressFill.style.width = '100%';
+                    progressFill.textContent = '100% - Selesai!';
+                    showNotification('✓ Presentasi selesai dibuat!', 'success');
+                } else {
+                    progressFill.style.width = progress + '%';
+                    progressFill.textContent = Math.floor(progress) + '%';
+                }
+            }, 500);
+        }
+
+        // Download Simulation
+        function simulateDownload() {
+            showNotification('📥 Memulai download...', 'success');
+            
+            setTimeout(() => {
+                showNotification('✓ File PPTX & PDF siap didownload!', 'success');
+                
+                // Save download history
+                const downloadHistory = JSON.parse(localStorage.getItem('fastslide_downloads') || '[]');
+                downloadHistory.push({
+                    timestamp: new Date().toISOString(),
+                    template: selectedTemplate || 'Default',
+                    files: uploadedFiles.length
+                });
+                localStorage.setItem('fastslide_downloads', JSON.stringify(downloadHistory));
+            }, 2000);
+        }
+
+        // Service Detail Modal
+        const serviceDetails = {
+            'ppt-kilat': {
+                title: 'Pembuatan PPT Kilat',
+                icon: 'fas fa-rocket',
+                description: 'Layanan pembuatan presentasi PowerPoint dari nol dengan kecepatan luar biasa.',
+                features: [
+                    'Pengerjaan super cepat 1-3 jam',
+                    'Desain modern dan profesional',
+                    'Palet warna premium',
+                    'Layout komunikatif dengan ikon',
+                    'Visualisasi data menarik',
+                    'Ilustrasi berkualitas tinggi'
+                ],
+                bonus: ['Konsultasi konsep gratis', 'Revisi ringan', 'File PPTX & PDF']
+            },
+            'template': {
+                title: 'Template Estetik & Profesional',
+                icon: 'fas fa-paint-brush',
+                description: 'Koleksi template siap pakai yang dapat digunakan berulang kali.',
+                features: [
+                    '20-40 layout lengkap',
+                    'Cover, isi, grafik, tabel',
+                    'Layout foto profesional',
+                    'Slide penutup elegan',
+                    'Dapat digunakan berulang',
+                    'Cocok untuk berbagai keperluan'
+                ],
+                bonus: ['Update template gratis', 'Panduan penggunaan', 'Warna dapat disesuaikan']
+            },
+            'perapian': {
+                title: 'Perapian PPT',
+                icon: 'fas fa-magic',
+                description: 'Sempurnakan presentasi yang sudah ada dengan sentuhan profesional.',
+                features: [
+                    'Merapikan struktur slide',
+                    'Menyeragamkan warna & font',
+                    'Memperbaiki tata letak',
+                    'Meningkatkan kualitas gambar',
+                    'Menyederhanakan teks berlebih',
+                    'Tampilan lebih bersih & profesional'
+                ],
+                bonus: ['Before-After preview', 'Saran perbaikan', 'Optimasi visual']
+            },
+            'export': {
+                title: 'Export PPT/PDF Premium',
+                icon: 'fas fa-file-export',
+                description: 'File siap presentasi dalam berbagai format dan kualitas.',
+                features: [
+                    'Format PPTX editable',
+                    'Format PDF siap presentasi',
+                    'File ringan untuk WhatsApp',
+                    'Versi HD untuk layar besar',
+                    'Kompresi optimal',
+                    'Multi-format output'
+                ],
+                bonus: ['Link download aman', 'Cloud storage 30 hari', 'Backup file']
+            }
+        };
+
+        function showServiceDetail(serviceId) {
+            const service = serviceDetails[serviceId];
+            const detailHTML = `
+                <div style="color: #19183B;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <i class="${service.icon}" style="font-size: 4rem; color: #708993;"></i>
+                        <h2 style="margin-top: 15px;">${service.title}</h2>
+                        <p style="color: #555; font-size: 1.1rem;">${service.description}</p>
+                    </div>
+                    
+                    <h4 style="color: #19183B; margin-top: 25px;">✨ Fitur Utama:</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        ${service.features.map(f => `
+                            <li style="padding: 8px 0; color: #555;">
+                                <i class="fas fa-check-circle" style="color: #4CAF50; margin-right: 10px;"></i>${f}
+                            </li>
+                        `).join('')}
+                    </ul>
+                    
+                    <h4 style="color: #19183B; margin-top: 25px;">🎁 Bonus:</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        ${service.bonus.map(b => `
+                            <li style="padding: 8px 0; color: #555;">
+                                <i class="fas fa-gift" style="color: #708993; margin-right: 10px;"></i>${b}
+                            </li>
+                        `).join('')}
+                    </ul>
+                    
+                    <button class="btn btn-detail w-100 mt-4" onclick="closeModal('serviceModal'); openUploadModal();">
+                        <i class="fas fa-rocket"></i> Pesan Sekarang
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('serviceDetail').innerHTML = detailHTML;
+            document.getElementById('serviceModal').classList.add('show');
+        }
+
+        // Add CSS animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOutRight {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Load from LocalStorage on page load
+        window.addEventListener('load', function() {
+            const saved = localStorage.getItem('fastslide_visit');
+            if (saved) {
+                console.log('Data tersimpan:', JSON.parse(saved));
+            }
+        });
+
+        // Parallax Effect on Scroll
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // Intersection Observer for Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .step-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
