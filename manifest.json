@@ -3,7 +3,7 @@
     "short_name": "FastSlide",
     "start_url": "index.html",
     "display": "standalone",
-    "background_color": "# 19183B",
+    "background_color": "#19183B",
     "theme_color": "#708993",
     "icons": [
     {
